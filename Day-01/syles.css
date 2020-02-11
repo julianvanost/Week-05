@@ -1,0 +1,12 @@
+.jumbotron {
+  max-width: 85%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 20px;
+  border: 1px solid #000;
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+}
