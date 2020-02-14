@@ -1,20 +1,29 @@
 const prompt = require('inquirer').createPromptModule()
-const axios = require('axios')
 
-async function getMovie() {
+async function startGame() {
   try {
-    const { title } = await prompt({
-      type: 'input',
-      name: 'title',
-      message: 'What movie are you looking for?'
+    const { panelist } = await prompt({
+      list: 'input',
+      name: 'panelist',
+      message: 'What is the name of the constestant?'
     })
+    const panelistName = panelist
+    console.log(panelistName)
+  } catch (e) {
+    console.error(e)
+  }
 
-    const { data } = await axios.get(`http://omdbapi.com/?t=${title}&apikey=trilogy`)
-
-    console.log(data)
+  try {
+    const { contestants } = await prompt({
+      type: 'number',
+      name: 'contestants',
+      message: 'How many contestanst will be playing?'
+    })
+    const numContestants = contestants
+    console.log(panelistName)
   } catch (e) {
     console.error(e)
   }
 }
-// Use try/catch functions when there are potential errors in your functions.
-getMovie()
+
+startGame()
